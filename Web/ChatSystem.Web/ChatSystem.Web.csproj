@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-ChatSystem.Web-4727ad10-d4ff-46bf-a392-86049b225c30</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.31" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.31" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.31" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.RazorPages" Version="2.2.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.31" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.31" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\ChatSystem.Data.Models\ChatSystem.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\ChatSystem.Data\ChatSystem.Data.csproj" />
+    <ProjectReference Include="..\..\Services\ChatSystem.Services\ChatSystem.Services.csproj" />
+  </ItemGroup>
+
+</Project>
