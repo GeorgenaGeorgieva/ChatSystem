@@ -1,3 +1,5 @@
+using ChatSystem.Data;
+using ChatSystem.Data.Models;
 using ChatSystem.Web.Data;
 using ChatSystem.Web.Hubs;
 using Microsoft.AspNetCore.Builder;
@@ -33,10 +35,10 @@ namespace ChatSystem.Web
                     Configuration.GetConnectionString("DefaultAppConnection")));
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+                options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<IdentityUser, IdentityRole>(
+            services.AddDefaultIdentity<User>(
                options =>
                {
                    options.SignIn.RequireConfirmedAccount = false;
@@ -49,10 +51,11 @@ namespace ChatSystem.Web
                    options.Lockout.DefaultLockoutTimeSpan = new TimeSpan(1);
                    options.User.RequireUniqueEmail = true;
                })
-               .AddEntityFrameworkStores<ApplicationDbContext>()
-               .AddRoles<IdentityRole>()
+               .AddEntityFrameworkStores<ChatSystemDbContext>()
+               .AddDefaultTokenProviders()
                .AddDefaultUI()
-               .AddDefaultTokenProviders();
+               .AddSignInManager();
+
 
             services.AddControllersWithViews();
             services.AddRazorPages();

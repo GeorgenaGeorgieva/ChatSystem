@@ -13,10 +13,6 @@ namespace ChatSystem.Data.Models
             this.Messages = new List<Message>();
         }
 
-        [Required]
-        [MaxLength(50)]
-        public string Name { get; set; }
-
         public bool IsOnline { get; set; }
 
         public ICollection<Message> Messages { get; set; }
